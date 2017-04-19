@@ -45,56 +45,29 @@ $('.sl').on('click', function (e) {
     f.submit();    
 });
 
-    //#to-top button appears after scrolling
-    var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                 $('#to-top').css({position:'fixed', display:'block'});
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
+//#to-top button appears after scrolling
+var fixed = false;
+$(document).scroll(function() {
+    if ($(this).scrollTop() > 250) {
+        if (!fixed) {
+            fixed = true;
+             $('#to-top').css({position:'fixed', display:'block'});
+            $('#to-top').show("slow", function() {
+                $('#to-top').css({
+                    position: 'fixed',
+                    display: 'block'
                 });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
+            });
         }
-    });
+    } else {
+        if (fixed) {
+            fixed = false;
+            $('#to-top').hide("slow", function() {
+                $('#to-top').css({
+                    display: 'none'
+                });
+            });
+        }
+    }
+});
     
-    //highslide
-    hs.graphicsDir = 'highslide/graphics/';
-    hs.align = 'center';
-    hs.transitions = ['expand', 'crossfade'];
-    hs.outlineType = 'rounded-white';
-    hs.fadeInOut = true;
-    hs.dimmingOpacity = 0.75;
-
-    // define the restraining box
-    hs.useBox = true;
-    hs.width = 640;
-    hs.height = 480;
-
-    // Add the controlbar
-    hs.addSlideshow({
-            //slideshowGroup: 'group1',
-            interval: 5000,
-            repeat: false,
-            useControls: true,
-            fixedControls: 'fit',
-            overlayOptions: {
-                    opacity: 1,
-                    position: 'bottom center',
-                    hideOnMouseOut: true
-            }
-    });
-    // slicebox
