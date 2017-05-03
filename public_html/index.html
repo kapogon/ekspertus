@@ -10,12 +10,13 @@
         <!-- Custom CSS -->
         <link href="css/main.css" rel="stylesheet">
         <link href="css/swipebox.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+        <link href="css/slicebox.css" rel="stylesheet">
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600,700,800&amp;subset=latin-ext" rel="stylesheet">
-        <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
     </head>
     <body id="top" data-spy="scroll" data-target=".navbar-fixed-top">
         <!-- Navigation -->
@@ -207,19 +208,19 @@
                 </div>
                 <div class="row certificate-padding">
                     <div class="col-md-12 text-center">
-                        <div class="col-md-4 col-sm-4 col-xs-12 center-block">
+                        <div class="col-md-4 col-sm-4 col-tablet col-xs-12 center-block">
                             <a rel="gallery-2" href="diplomas/certyfikat_rzeczoznawca.jpg" class="swipebox">
                                 <img src="diplomas/certyfikat_rzeczoznawca_tumb.jpg" alt="dyplom WAT" class="img-responsive img-diploma"> 
                             </a>
                             <p>Certyfikat <em>Rzeczoznawcy ds. techniki samochodowej</em> wydany przez SIM-TECH</p>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-4 col-sm-4 col-tablet col-xs-12">
                             <a rel="gallery-2" href="diplomas/dyplom_PW.jpg" class="swipebox">
                                 <img src="diplomas/dyplom_PW_tumb.jpg" alt="dyplom PW" class="img-responsive  img-diploma"> 
                             </a>    
                             <p>Świadectwo ukończenia studiów podyplomowych w zakresie <em>Powstawanie i likwidacja szkód komunikacyjnych</em></p>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-md-4 col-sm-4 col-tablet col-xs-12">
                             <a rel="gallery-2" href="diplomas/dyplom_WAT.JPG" class="swipebox">
                                 <img src="diplomas/dyplom_WAT_tumb.jpg" alt="dyplom WAT" class="img-responsive  img-diploma"> 
                             </a>
@@ -255,15 +256,15 @@
                                             <p><i class="glyphicon glyphicon-phone"></i>&nbsp; 517 599 330</p>
                                         </div>
                                     </div>
-                                    <form id="form_contact" method="post" action="sendemail.php">
+                                    <form id="form_contact" method="post" action="send.php">
                                         <h3 class="heading3 text-center"><i class="glyphicon glyphicon-send"></i>&nbsp; Napisz do mnie</h3> 
                                         <div class="form-group">
                                                 <div class="row">
-                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 contact-input">
                                                                 <input type="text" class="form-control" placeholder="Twój adres e-mail" name="email" id="email" autocomplete="off">
                                                         </div>
                                                         <div class="visible-xs"></div>
-                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <div class="col-md-6 col-sm-6 col-xs-12 contact-input">
                                                                 <input type="text" class="form-control" placeholder="Temat" name="temat" id="temat" autocomplete="off">
                                                         </div>
                                                 </div>
@@ -307,80 +308,12 @@
         <script src="js/cbpAnimatedHeader.js"></script>
         <script src="js/jquery.stellar.min.js"></script>
         <script src="js/gmap3.min.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
+        <!--<script src="js/jquery.validate.min.js"></script>-->
         <script src="js/jquery.swipebox.js"></script>
-        <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+        <script src="js/jquery.slicebox.js"></script>
         <script src="js/scripts.js"></script>
         <script>
-            $('#map').gmap3({
-                map: {
-                    options: {
-                        center: [52.176856, 21.589037],
-                        zoom: 15,
-                        panControl: false,
-                        zoomControl: false
-                    }
-                },
-                marker: {
-                    values:[{
-                        latLng: [52.176856, 21.589037],
-                        data: 'Warszawska 252'
-                    }],
-                    events:{
-                        click: function(marker, event, context) {
-                            var map = $(this).gmap3('get'),
-                                infowindow = $(this).gmap3({get:{name:'infowindow'}});
-                            if (infowindow) {
-                                infowindow.open(map, marker);
-                                infowindow.setContent(context.data);
-                            } else {
-                                $(this).gmap3({
-                                    infowindow: {
-                                        anchor: marker,
-                                        options: {content: context.data}
-                                    }
-                                });
-                            }
-                        }
-                    }
-                }
-            });
-            $(function() {
-                var Page = (function() {
-                    var $navArrows = $( '#nav-arrows' ).hide(),
-                        $shadow = $( '#shadow' ).hide(),
-                        slicebox = $( '#sb-slider' ).slicebox( {
-                            onReady : function() {
-                                $navArrows.show();
-                                $shadow.show();
-                            },
-                            orientation : 'r',
-                            cuboidsRandom : true,
-                            disperseFactor : 30,
-                            autoplay: true,
-                            interval: 6000
-                        } ),
-                        init = function() {
-                            initEvents();
-                        },
-                        initEvents = function() {
-                            // add navigation events
-                            $navArrows.children( ':first' ).on( 'click', function() {
-                                slicebox.next();
-                                return false;
-                            } );
-                            $navArrows.children( ':last' ).on( 'click', function() {
-                                slicebox.previous();
-                                return false;
-                            } );
-                        };
-                        return { init : init };
-            })();
-            Page.init();
-        });
-        $(document).ready(function() {
-            $( '.swipebox' ).swipebox();
-        });
+
         </script>
     </body>
 </html>
