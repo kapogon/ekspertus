@@ -19,6 +19,26 @@
         <script type="text/javascript" src="js/modernizr.custom.js"></script>
     </head>
     <body id="top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <div id="loader-wrapper" class="hidden-xs hidden-sm">
+            <div class="loader">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="subline"></div>
+              <div class="subline"></div>
+              <div class="subline"></div>
+              <div class="subline"></div>
+              <div class="subline"></div>
+              <div class="loader-circle-1">
+                  <div class="loader-circle-2"></div>
+              </div>
+              <div class="needle"></div>
+              <div class="loading">Loading</div>
+            </div>
+        </div>
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -276,6 +296,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group g-recaptcha" data-sitekey="6LddRyAUAAAAANq63SkLGgFpRoVizMKrmPnGL-qh"></div>
                                         <button type="submit" name="submit" class="btn btn_send" id="sendEmailButton"><i class="glyphicon glyphicon-envelope"></i> &nbsp;Wyślij wiadomość</button>
                                 </form>
                                 </div>    
@@ -301,6 +322,7 @@
             </footer>
         </section>
         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCeIQ_gXiKEPh389E0Gv7gqYivF8hZ3q_0'></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.easing.min.js"></script>
@@ -402,21 +424,21 @@
                 }
 
                 //$('.form-error', $form).remove();
-                $('#loader').modal('show');
+                $('.spinner-wrapper').show();
                 //$('input, textarea', $form).prop('readonly', true);
                 //$submit.val('Wysyłam…');
                 sending = true;
 
                 $.post($form.attr('action'), $form.serialize(), function(data) {
                     if (data === 'ok') {
-                        $('#loader.in').modal('hide');
+                        $('.spinner-wrapper').hide();
                         $('#success').modal('show');
                         $("#form_contact :input").each(function(){
                             $(this).val("");
                         });
                         return true;
                     }
-
+                    $('.spinner-wrapper').hide();
                     $('#failed').modal('show');
                     //$('input, textarea', $form).prop('readonly', false);
                     //$submit.val('Wyślij wiadomość');
@@ -427,44 +449,29 @@
             });
         });
         $(window).load(function() { // Czekamy na załadowanie całej zawartości strony
-	$(".loader").fadeOut(); // Usuwamy grafikę ładowania
-	$("#loader-wrapper").delay(550).fadeOut("slow"); // Usuwamy diva przysłaniającego stronę
-})
+            $(".loader").fadeOut(); // Usuwamy grafikę ładowania
+            $("#loader-wrapper").delay(450).fadeOut("slow"); // Usuwamy diva przysłaniającego stronę
+        })
         </script>
-        <div id="loader-wrapper" class="hidden-xs hidden-sm">
-            <div class="loader">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="subline"></div>
-              <div class="subline"></div>
-              <div class="subline"></div>
-              <div class="subline"></div>
-              <div class="subline"></div>
-              <div class="loader-circle-1">
-                  <div class="loader-circle-2"></div>
-              </div>
-              <div class="needle"></div>
-              <div class="loading">Loading</div>
-            </div>
+        <div class="spinner-wrapper">
+            <div class="spinner">Loading...</div>
         </div>
-        <!--<div id="loader" class="modal">Loading...</div>-->
-
         <div id="success" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content success">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <p>Wiadomość została wysłana! Skontaktujemy się z Tobą jak tylko to będzie możliwe</p>
+              <span class="glyphicon glyphicon-ok-sign status-message-icon"></span>
+              <h3 class="model-content-h3">Potwierdzenie</h3>
+              <p class="model-content-p">Wiadomość została wysłana! Skontaktujemy się z Tobą jak tylko to będzie możliwe.</p>
             </div>
         </div>
         <div id="failed" class="modal">
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content failed">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <p>Wystąpił błąd podczas wysyłania formularza. Upewnij się, że wypełniłeś wszystkie pola i poprawnie rozwiązałeś działanie.</p>
+              <span class="glyphicon glyphicon-remove-sign status-message-icon"></span>
+              <h3 class="model-content-h3">Błąd</h3>
+              <p class="model-content-p">Wystąpił błąd podczas wysyłania formularza. Upewnij się, że wypełniłeś/aś wszystkie pola.</p>
             </div>
         </div>
     </body>
