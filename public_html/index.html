@@ -4,7 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/favicon.png">
-        <title>Ekspertus - biuro usług rzeczoznawczych</title>
+        <title>Ekspertus | Rzeczoznawstwo samochodowe | Likwidacja szkód</title>
+        <meta name="description" content="Wykonujemy pełny zakres usług w zakresie rzeczoznawstwa samochodowego gwarantując najwyższą jakość wykonywanych opinii oraz szybki czas realizacji zleceń.">
+        <meta name="keywords" content="Ekspertus, rzeczoznawca samochodowy, likwidacja szkód, Mińsk Mazowiecki" />
+        <meta name="author" content="Karol Pogonowski">
+        <link rel="canonical" href="http://www.ekspertus-rzeczoznawca.pl/" />
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom CSS -->
@@ -19,7 +23,7 @@
         <script type="text/javascript" src="js/modernizr.custom.js"></script>
     </head>
     <body id="top" data-spy="scroll" data-target=".navbar-fixed-top">
-        <div id="loader-wrapper" class="hidden-xs hidden-sm">
+       <div id="loader-wrapper">
             <div class="loader">
               <div class="line"></div>
               <div class="line"></div>
@@ -54,7 +58,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a class="page-scroll" href="#top"><i class="glyphicon glyphicon-home"></i></a>
+                            <a class="page-scroll" href="#top"><span class="glyphicon glyphicon-home"></span></a>
                         </li>
                         <li>
                             <a class="page-scroll" href="#about">O firmie</a>
@@ -82,7 +86,7 @@
                                 <hr>
                                 <h2 class="text-spec">mgr inż. Marek Karpiarz</h2>
                                 <a class="page-scroll btn btn-circle" href="#about">
-                                    <i class="glyphicon glyphicon-chevron-down animated"></i>
+                                    <span class="glyphicon glyphicon-chevron-down animated"></span>
                                 </a>
                             </div>
                         </div>
@@ -259,25 +263,25 @@
                             <h2 class="text-center heading2">Kontakt</h2>
                             <div class="col-md-6">
                                 <div class="col-md-12">
-                                    <h3 class="text-center heading3"><i class="glyphicon glyphicon-info-sign"></i>&nbsp; Dane kontaktowe</h3>
+                                    <h3 class="text-center heading3"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; Dane kontaktowe</h3>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p><i class="glyphicon glyphicon-user"></i>&nbsp; mgr inż. Marek Karpiarz</p>
+                                            <p><span class="glyphicon glyphicon-user"></span>&nbsp; mgr inż. Marek Karpiarz</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><i class="glyphicon glyphicon-map-marker"></i>&nbsp; Warszawska 252<br>&nbsp; Mińsk Mazowiecki, 05-300</p>
+                                            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp; Warszawska 252<br>&nbsp; Mińsk Mazowiecki, 05-300</p>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <p><i class="glyphicon glyphicon-envelope"></i>&nbsp; karpiarzmarek@wp.pl</p>
+                                            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp; karpiarzmarek@wp.pl</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><i class="glyphicon glyphicon-phone"></i>&nbsp; 517 599 330</p>
+                                            <p><span class="glyphicon glyphicon-phone"></span>&nbsp; 517 599 330</p>
                                         </div>
                                     </div>
                                     <form id="form_contact" method="post" action="send.php">
-                                        <h3 class="heading3 text-center"><i class="glyphicon glyphicon-send"></i>&nbsp; Napisz do mnie</h3> 
+                                        <h3 class="heading3 text-center"><span class="glyphicon glyphicon-send"></span>&nbsp; Napisz do mnie</h3> 
                                         <div class="form-group">
                                                 <div class="row">
                                                         <div class="col-md-6 col-sm-6 col-xs-12 contact-input">
@@ -285,7 +289,7 @@
                                                         </div>
                                                         <div class="visible-xs"></div>
                                                         <div class="col-md-6 col-sm-6 col-xs-12 contact-input">
-                                                                <input type="text" class="form-control" placeholder="Temat" name="temat" id="temat" autocomplete="off" required>
+                                                            <input type="text" class="form-control" placeholder="Temat" name="temat" id="temat" autocomplete="off" required>
                                                         </div>
                                                 </div>
                                         </div>
@@ -296,13 +300,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group g-recaptcha" data-sitekey="6LddRyAUAAAAANq63SkLGgFpRoVizMKrmPnGL-qh"></div>
-                                        <button type="submit" name="submit" class="btn btn_send" id="sendEmailButton"><i class="glyphicon glyphicon-envelope"></i> &nbsp;Wyślij wiadomość</button>
+                                        <!--<div class="form-group g-recaptcha" data-sitekey="6LddRyAUAAAAANq63SkLGgFpRoVizMKrmPnGL-qh"></div>-->
+                                        <button type="submit" name="submit" class="btn btn_send" id="sendEmailButton"><span class="glyphicon glyphicon-envelope"></span> &nbsp;Wyślij wiadomość</button>
                                 </form>
                                 </div>    
                             </div>  
                             <div class="col-md-6">
-                                <h3 class="heading3 text-center"><i class="glyphicon glyphicon-globe"></i>&nbsp;Mapa</h3>
+                                <h3 class="heading3 text-center"><span class="glyphicon glyphicon-globe"></span>&nbsp;Mapa</h3>
                                 <div id="map"></div>
                             </div> 
                         </div>
@@ -318,7 +322,7 @@
                         </div>
                     </div>
                 </div>
-                <a id="to-top" href="#top" class="page-scroll btn btn-to-top btn-dark btn-lg"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                <a id="to-top" href="#top" class="page-scroll btn btn-to-top btn-dark btn-lg"><span class="glyphicon glyphicon-chevron-up"></span></a>
             </footer>
         </section>
         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCeIQ_gXiKEPh389E0Gv7gqYivF8hZ3q_0'></script>
@@ -369,7 +373,6 @@
                     }
                 }
             });
-
             //animate slicebox
             $(function() {
                 var Page = (function() {
@@ -404,31 +407,22 @@
                 })();
                 Page.init();
             });
-
             //gallery swipebox
             $( '.swipebox' ).swipebox({
                 removeBarsOnMobile : true,
-                hideCloseButtonOnMobile : true,
+                hideCloseButtonOnMobile : true
             });
-            
             //validate contact form
             $(function() {
             var sending = false;
             $('#form_contact').on('submit', function(e) {
-                var $form = $(this)/*, $submit = $('input[type="submit"]', $form)*/;
-
+                var $form = $(this);
                 e.preventDefault();
-
                 if (sending) {
                     return false;
                 }
-
-                //$('.form-error', $form).remove();
                 $('.spinner-wrapper').show();
-                //$('input, textarea', $form).prop('readonly', true);
-                //$submit.val('Wysyłam…');
                 sending = true;
-
                 $.post($form.attr('action'), $form.serialize(), function(data) {
                     if (data === 'ok') {
                         $('.spinner-wrapper').hide();
@@ -443,7 +437,6 @@
                     //$('input, textarea', $form).prop('readonly', false);
                     //$submit.val('Wyślij wiadomość');
                     sending = false;
-
                     return false;
                 }, 'text');
             });
@@ -451,7 +444,7 @@
         $(window).load(function() { // Czekamy na załadowanie całej zawartości strony
             $(".loader").fadeOut(); // Usuwamy grafikę ładowania
             $("#loader-wrapper").delay(450).fadeOut("slow"); // Usuwamy diva przysłaniającego stronę
-        })
+        });
         </script>
         <div class="spinner-wrapper">
             <div class="spinner">Loading...</div>
